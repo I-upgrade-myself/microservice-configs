@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/auth_db
-    username: dev_user
-    password: dev_pass
+    url: jdbc:postgresql://localhost:54321/auth_db
+    username: auth_user
+    password: auth_pass
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,3 +14,4 @@ spring:
 jwt:
   secret: mzA0OTFlNzkwNzhlYzYzYjFkZTZjYWIwMTY0M2RkNWI0Yzg5
   expiration: 3600000
+ 

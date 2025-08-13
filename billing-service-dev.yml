@@ -14,3 +14,4 @@ spring:
 billing:
   currency: EUR
   tax-rate: 0.2
+ 

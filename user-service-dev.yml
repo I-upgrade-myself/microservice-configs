@@ -3,10 +3,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/user_db
-    username: dev_user
-    password: dev_pass
+    url: jdbc:postgresql://localhost:54323/user_db
+    username: user_user
+    password: user_pass
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+
+ 
