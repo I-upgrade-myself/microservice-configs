@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://prod-db:5432/auth_db
+    username: prod_user
+    password: prod_pass
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+jwt:
+  secret: prod_secret_key
+  expiration: 3600000

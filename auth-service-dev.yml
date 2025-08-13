@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: dev_user
+    password: dev_pass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: mzA0OTFlNzkwNzhlYzYzYjFkZTZjYWIwMTY0M2RkNWI0Yzg5
+  expiration: 3600000

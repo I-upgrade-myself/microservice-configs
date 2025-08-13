@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://prod-db:5432/billing_db
+    username: prod_user
+    password: prod_pass
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+billing:
+  currency: EUR
+  tax-rate: 0.2

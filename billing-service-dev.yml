@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54322/billing_db
+    username: billing_user
+    password: billing_pass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+billing:
+  currency: EUR
+  tax-rate: 0.2

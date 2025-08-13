@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: common-config
+
+logging:
+  level:
+    root: INFO
+
+monitoring:
+  prometheus:
+    enabled: true
