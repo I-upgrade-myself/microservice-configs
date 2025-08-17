@@ -1,19 +1,66 @@
-server:
-  port: 8080
-
 spring:
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+        - RemoveHopByHop=proxy-connection,keep-alive,te,trailers,transfer-encoding,upgrade
+
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 3600
+
       routes:
         - id: auth-service
-          uri: http://localhost:8081
+          uri: lb://auth-service
           predicates:
-            - Path=/auth/**
-        - id: billing-service
-          uri: http://localhost:8082
-          predicates:
-            - Path=/billing/**
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=1
+
         - id: user-service
-          uri: http://localhost:8083
+          uri: lb://user-service
           predicates:
-            - Path=/users/**
+            - Path=/api/users/**
+          filters:
+            - StripPrefix=1
+
+        - id: billing-service
+          uri: lb://billing-service
+          predicates:
+            - Path=/api/billing/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
+
+
+
+
+# server:
+#   port: 8080
+
+# spring:
+#   cloud:
+#     gateway:
+#       routes:
+#         - id: auth-service
+#           uri: http://localhost:8081
+#           predicates:
+#             - Path=/auth/**
+#         - id: billing-service
+#           uri: http://localhost:8082
+#           predicates:
+#             - Path=/billing/**
+#         - id: user-service
+#           uri: http://localhost:8083
+#           predicates:
+#             - Path=/users/**

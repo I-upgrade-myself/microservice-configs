@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:54321/auth_db
+    url: jdbc:postgresql://postgres:5432/auth_db   # у Docker
     username: auth_user
     password: auth_pass
   jpa:
@@ -13,5 +13,21 @@ spring:
 
 jwt:
   secret: mzA0OTFlNzkwNzhlYzYzYjFkZTZjYWIwMTY0M2RkNWI0Yzg5
-  expiration: 3600000
- 
+  expiration: 3600000   # 1 година
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  server:
+    port: 9091   # метрики окремим портом
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://jaeger:4317   # OpenTelemetry 
