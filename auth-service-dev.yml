@@ -16,18 +16,44 @@ jwt:
   expiration: 3600000   # 1 година
 
 management:
+  server:
+    port: 9091
   endpoints:
     web:
       exposure:
-        include: health, prometheus
-  endpoint:
-    prometheus:
-      enabled: true
-  server:
-    port: 9091   # метрики окремим портом
-  tracing:
-    sampling:
-      probability: 1.0
-  otlp:
-    tracing:
-      endpoint: http://jaeger:4317   # OpenTelemetry 
+        include: health,prometheus
+
+
+
+ 
+
+# server:
+#   port: 8081
+
+# spring:
+#   datasource:
+#     url: jdbc:postgresql://postgres:5432/auth_db   # у Docker
+#     username: auth_user
+#     password: auth_pass
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     show-sql: true
+
+# jwt:
+#   secret: mzA0OTFlNzkwNzhlYzYzYjFkZTZjYWIwMTY0M2RkNWI0Yzg5
+#   expiration: 3600000   # 1 година
+
+# management:
+#   server:
+#     port: 9091
+#   endpoints:
+#     web:
+#       exposure:
+#         include: health,prometheus
+#   tracing:
+#     sampling:
+#       probability: 1.0
+#   zipkin:
+#     tracing:
+#       endpoint: http://zipkin:9411/api/v2/spans
