@@ -14,4 +14,11 @@ spring:
 billing:
   currency: EUR
   tax-rate: 0.2
- 
+
+management:
+  server:
+    port: 9092
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
