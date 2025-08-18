@@ -29,6 +29,3 @@ management:
   security:
     enabled: false
 
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
