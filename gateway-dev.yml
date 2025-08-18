@@ -51,8 +51,16 @@ management:
         include: health,info,prometheus
 
 jwt:
-  secret: mzA0OTFlNzkwNzhlYzYzYjFkZTZjYWIwMTY0M2RkNWI0Yzg5
-  expiration: 3600000   
+  public-key: |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvP6LkY+3W5P5y6l3u1jV
+    bUwLwR7J5f5SZ5MfhPZ9+wPT1KVDt4Q9YKhxqfU8YQ+eU2m5uT3/6wZ2X0L8i5Rv
+    j9SvQbsjP4EmzV4T+YrkxCqdx0TtAqL6nRZbgAq+3cK3R8fuhCObF+JrHUZqR7sE
+    2Kc8I0DfL9ZzG5cI6kq5r6Jd6m2BFvYfCJvQn1nIqCMx9xIGG6B5C7zvQhbYkryH
+    hRCd6qlpNFFsdZc7V4JhkH2N2HfPQ6VpzR5khqZ0/LBqNdR0mH0kE/TOVVxfyW1u
+    GiQFJXsTtF1rEy/njZfLhPZ6jEwSFnyl6zK8+vBr9x3xlZl1wrXq7KmZ0uzrjI8I
+    QwIDAQAB
+    -----END PUBLIC KEY-----
 
 
 # server:
