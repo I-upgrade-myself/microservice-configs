@@ -50,7 +50,9 @@ management:
       exposure:
         include: health,info,prometheus
 
-
+jwt:
+  secret: mzA0OTFlNzkwNzhlYzYzYjFkZTZjYWIwMTY0M2RkNWI0Yzg5
+  expiration: 3600000   
 
 
 # server:
