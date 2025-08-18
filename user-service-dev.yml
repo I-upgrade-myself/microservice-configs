@@ -18,3 +18,12 @@ management:
     web:
       exposure:
         include: health,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  security:
+    enabled: false
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
